@@ -1,0 +1,97 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Student Registration
+    link(rel='stylesheet' href='/cssfiles/bootstrap.min.css')
+    link(rel='stylesheet' href='/cssfiles/index.css')
+  body
+    .container
+      form#form-id(action='/' method='POST' name='studentsregister' enctype="multipart/form-data")
+        .row
+          .col-lg-11.first-div
+            p Student Registration Form
+          .col-lg-11#first-div  
+        .row
+          .form-control
+            .col-lg-6.second-div
+              .surname-div
+                label(for='') Sur name 
+                br
+                input(type='text' name='surname')
+                br
+                small#surname-error
+              .givenname-div
+                label(for='') Given name
+                br
+                input(type='text' name='givenname')
+                br
+                small#givenname-error
+              .title-div
+                label(for='') Title
+                select(name='title')
+                  option(value='default') --Select Title--
+                  option(value='Mr.') Mr.
+                  option(value='Mrs.') Mrs.
+                  option(value='Miss') Miss
+                  option(value='Dr.') Dr.
+                  option(value='Prof.') Prof.
+            .col-lg-4.picture-section
+              .picture-div
+              input#pic-btn(type='file' name='picture')
+        .row
+          label#gender-p(for='') Gender
+          .col-lg-11.third-div
+            .form-action
+              .male-gender
+                input#male.form-check-input(type='radio' name='gender' value='Male' checked)
+                span#malegender-label.form-check-label(for='male')
+                  | Male
+              .female-gender
+                input#female.form-check-input(type='radio' value='Female' name='gender')
+                span#femalegender-label.form-check-label(for='female')
+                  | Female
+          small#gender-error
+        .row
+          .col-lg-11.sixth-div
+            .form-control
+              .dob-div
+                label(for='') Date of Birth
+                br
+                input(type='date' name='dob')
+                br
+                small#dob-error
+              .country-div
+                label(for='') Country
+                br
+                select(name='country')
+                  option(value='default') --Select Country--
+                  option(value='Uganda') Uganda
+                  option(value='Kenya') Kenya
+                  option(value='Rwanda') Rwanda
+                  option(value='Tanzania') Tanzania
+                  option(value='Burundi') Burundi
+                br
+                small#contry-error
+        .row
+          .col-lg-11.tenth-div
+            label(for='') Place of Residence
+            br
+            input(type='text' name='residence')
+            br
+            small#residence-error
+        .row
+          .col-lg-11.twelve-div
+            label(for='') Nationality
+            br
+            input(type='text' name='nationality')
+            br
+            small#nationality-error
+        .row
+          .col-lg-7
+          .col-lg-4.reg-btn-div
+            input(type='submit' value='Register')
+    script(src='/javaScriptfiles/bootstrap.min.js')
+    script(src="/javaScriptfiles/index.js")
